@@ -3,13 +3,15 @@ def get_database():
     import pymongo
     print('in GET DB')
     # Provide the mongodb atlas url to connect python to mongodb using pymongo
-    CONNECTION_STRING = "mongodb+srv://demouser:demoword@cluster0.igx0z.mongodb.net/myFirstDatabase"
+    #replace <password> with the password
+    CONNECTION_STRING = "mongodb+srv://demouser:<password>@cluster0.igx0z.mongodb.net/myFirstDatabase"
 
     # Create a connection using MongoClient. You can import MongoClient or use pymongo.MongoClient
     from pymongo import MongoClient
     client = MongoClient(CONNECTION_STRING)
 
     # Create the database for our example (we will use the same database throughout the tutorial
+    #replace joe with another name
     return client['user_shopping_list-joe']
     
 # This is added so that many files can reuse the function get_database()
